@@ -45,7 +45,14 @@ jobs:
             cmake \
             perl \
             nasm \
-            binutils
+            binutils \
+            protobuf-compiler
+
+      - name: Check build tools
+        run: |
+          protoc --version
+          cmake --version
+          musl-gcc --version
 
       - name: Install Rust target
         run: |
